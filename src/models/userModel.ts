@@ -45,8 +45,11 @@ User.init(
       type: DataTypes.ENUM("admin", "user"),
       defaultValue: "user",
     },
+    recover_pass_code: {
+      type: DataTypes.STRING(64),
+    },
     verification_code: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(64),
     },
     verified_at: {
       type: DataTypes.DATE,

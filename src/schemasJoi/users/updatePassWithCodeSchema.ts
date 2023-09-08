@@ -1,10 +1,8 @@
 import Joi from "joi";
 import joiErrorMessages from "../joiErrorMessages";
-import { AuthUser } from "../../types/registerUserTypes";
 
-const newUserSchema: Joi.ObjectSchema<AuthUser> = Joi.object({
-  username: Joi.string().required().messages(joiErrorMessages),
-  email: Joi.string().email().required().messages(joiErrorMessages),
+const updatePassWithCodeSchema = Joi.object({
+  recoverPassCode: Joi.string().required().messages(joiErrorMessages),
   password: Joi.string()
     .min(8)
     .max(30)
@@ -15,4 +13,4 @@ const newUserSchema: Joi.ObjectSchema<AuthUser> = Joi.object({
     .messages(joiErrorMessages),
 });
 
-export default newUserSchema;
+export default updatePassWithCodeSchema;

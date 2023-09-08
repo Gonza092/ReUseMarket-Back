@@ -1,4 +1,4 @@
-import { Request, Response } from "express";
+import { NextFunction, Request, Response } from "express";
 import { CustomError } from "./generateError";
 
 export const notFound = (req: Request, res: Response) => {
@@ -11,9 +11,10 @@ export const notFound = (req: Request, res: Response) => {
 export const errorHandler = (
   error: CustomError,
   req: Request,
-  res: Response
+  res: Response,
+  next: NextFunction
 ): void => {
-  console.error(error);
+  console.error(error.message);
   res.status(error.httpStatusCode || 500).send({
     status: "Error",
     message: error.message,

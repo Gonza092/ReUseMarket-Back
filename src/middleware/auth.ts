@@ -3,7 +3,7 @@ import { RequestExt } from "../types/req-ext";
 import { NextFunction, Response } from "express";
 import { verifyToken } from "../helpers/jwt.handle";
 
-const authUser = (req: RequestExt, res: Response, next: NextFunction) => {
+const authUser = async (req: RequestExt, res: Response, next: NextFunction) => {
   try {
     const { authorization } = req.headers;
 
@@ -19,7 +19,7 @@ const authUser = (req: RequestExt, res: Response, next: NextFunction) => {
       throw generateError("Token incorrecto", 401);
     }
 
-    req.userId = token;
+    req.userId = token.id;
 
     next();
   } catch (error) {
@@ -27,6 +27,4 @@ const authUser = (req: RequestExt, res: Response, next: NextFunction) => {
   }
 };
 
-module.exports = {
-  authUser,
-};
+export default authUser;

@@ -12,7 +12,10 @@
   "plugins": ["@typescript-eslint"],
   "root": true,
   "rules": {
-    "no-unused-vars": ["error", { "argsIgnorePattern": "next" }],
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      { "argsIgnorePattern": "next" }
+    ],
     "@typescript-eslint/no-var-requires": "off"
   }
 }
