@@ -5,6 +5,7 @@ const joiErrorMessages = {
   "any.required": 'El campo "{#key}" es obligatorio',
   "any.only": "Solo se permiten fotos jpeg o png",
   "string.email": "Debe proporcionar un email válido",
+  "string.length": 'El campo "{#key}" debe tener {#limit} caracteres',
   "string.max": 'El campo "{#key}" no debe exceder los {#limit} caracteres',
   "string.min": 'El campo "{#key}" debe tener al menos {#limit} caracteres',
   "string.pattern.base":

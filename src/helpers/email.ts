@@ -12,21 +12,15 @@ const transporter = createTransport({
   },
 } as TransportOptions);
 
-const sendVerificationEmail = async (
+export const sendMail = async (
   email: string,
-  verificationLink: string
+  subject: string,
+  html: string
 ) => {
-  try {
-    await transporter.sendMail({
-      from: SMTP_FROM,
-      to: email,
-      subject: "Verificación de cuenta",
-      html: `Por favor, haz clic en el siguiente enlace para verificar tu cuenta: <a href="${verificationLink}">${verificationLink}</a>`,
-    });
-  } catch (error) {
-    console.error(error);
-    throw new Error("Error al enviar el correo electrónico de verificación");
-  }
+  await transporter.sendMail({
+    from: SMTP_FROM,
+    to: email,
+    subject: subject,
+    html: html,
+  });
 };
-
-export { sendVerificationEmail };
