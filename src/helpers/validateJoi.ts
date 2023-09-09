@@ -1,6 +1,6 @@
 import { ObjectSchema } from "joi";
 
-const validateSchema = async (schema: ObjectSchema, data: string | object) => {
+const validateSchema = async (schema: ObjectSchema, data: object) => {
   try {
     await schema.validateAsync(data); // eslint-disable-next-line
   } catch (error: any) {

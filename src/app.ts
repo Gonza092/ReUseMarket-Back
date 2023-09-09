@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
 import morgan from "morgan";
+import imageUpload from "express-fileupload";
 
 import { router } from "./routes/indexRoutes";
 
@@ -10,6 +11,9 @@ const app = express();
 app.use(cors());
 app.use(morgan("dev"));
 app.use(express.json());
+app.use(imageUpload());
+
+app.use("/uploads/avatars", express.static("./uploads/avatars"));
 
 app.use(router);
 

@@ -1,7 +1,7 @@
 import { generate } from "randomstring";
 
 import { generateError } from "../../helpers/generateError";
-import { encrypt } from "../../helpers/bcrypt.handle";
+import { encrypt } from "../../helpers/bcryptHandle";
 import { sendMail } from "../../helpers/email";
 
 import { AuthUser } from "../../types/registerUserTypes";

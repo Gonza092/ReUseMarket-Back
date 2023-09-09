@@ -11,7 +11,7 @@ const verifyEmailController = async (
   try {
     const { code } = req.params;
 
-    await validateSchema(verifyEmailSchema, { code });
+    await validateSchema(verifyEmailSchema, req.params);
 
     await verifyEmail(code);
 
