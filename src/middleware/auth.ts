@@ -1,7 +1,7 @@
 import { generateError } from "../helpers/generateError";
 import { RequestExt } from "../types/req-ext";
 import { NextFunction, Response } from "express";
-import { verifyToken } from "../helpers/jwt.handle";
+import { verifyToken } from "../helpers/jwtHandle";
 
 const authUser = async (req: RequestExt, res: Response, next: NextFunction) => {
   try {

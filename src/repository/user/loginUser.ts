@@ -1,7 +1,7 @@
 import User from "../../models/userModel";
 import { generateError } from "../../helpers/generateError";
-import { verified } from "../../helpers/bcrypt.handle";
-import { generateToken } from "../../helpers/jwt.handle";
+import { verified } from "../../helpers/bcryptHandle";
+import { generateToken } from "../../helpers/jwtHandle";
 
 const loginUser = async (username: string, password: string) => {
   const user = await User.findOne({

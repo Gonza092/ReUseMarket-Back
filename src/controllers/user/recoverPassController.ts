@@ -11,7 +11,7 @@ const recoverPassController = async (
   try {
     const { email } = req.body;
 
-    await validateSchema(recoverPassSchema, { email });
+    await validateSchema(recoverPassSchema, req.body);
 
     await recoverPass(email);
 

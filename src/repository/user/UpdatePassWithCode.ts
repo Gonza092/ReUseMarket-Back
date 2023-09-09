@@ -1,6 +1,6 @@
 import User from "../../models/userModel";
 import { generateError } from "../../helpers/generateError";
-import { encrypt } from "../../helpers/bcrypt.handle";
+import { encrypt } from "../../helpers/bcryptHandle";
 
 const updatePassWithCode = async (
   recoverPassCode: string,
