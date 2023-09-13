@@ -1,14 +1,14 @@
 import { DataTypes, Model } from "sequelize";
 import { sequelize } from "../db/db";
+import ItemImages from "./itemImagesModel";
+import Favorites from "./favoritesModel";
 
 class Item extends Model {
   public item_id!: number;
   public title!: string;
   public description!: string | null;
   public price!: number;
-  public location_id!: number | null;
-  public category_id!: number | null;
-  public seller_id!: number | null;
+  public category!: string;
 }
 
 Item.init(
@@ -29,27 +29,19 @@ Item.init(
       type: DataTypes.DECIMAL(10, 2),
       allowNull: false,
     },
-    // location_id: {
-    //   type: DataTypes.INTEGER,
-    //   references: {
-    //     model: "Locations",
-    //     key: "location_id",
-    //   },
-    // },
-    // category_id: {
-    //   type: DataTypes.INTEGER,
-    //   references: {
-    //     model: "Categories",
-    //     key: "category_id",
-    //   },
-    // },
-    // seller_id: {
-    //   type: DataTypes.INTEGER,
-    //   references: {
-    //     model: "Users",
-    //     key: "user_id",
-    //   },
-    // },
+    category: {
+      type: DataTypes.ENUM(
+        "electronic",
+        "engine",
+        "books",
+        "clothes",
+        "inmobilary",
+        "sport",
+        "House and garden",
+        "other"
+      ),
+      allowNull: false,
+    },
   },
   {
     sequelize,
@@ -57,5 +49,12 @@ Item.init(
     tableName: "Items",
   }
 );
+
+Item.hasMany(ItemImages, {
+  foreignKey: "item_id",
+  sourceKey: "item_id",
+});
+
+Item.hasMany(Favorites, { foreignKey: "item_id", as: "item" });
 
 export default Item;
