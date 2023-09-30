@@ -1,8 +1,8 @@
 import Joi from "joi";
 import joiErrorMessages from "../joiErrorMessages";
-import { AuthUser } from "../../types/registerUserTypes";
+import { RegisterUser } from "../../types/registerUserTypes";
 
-const newUserSchema: Joi.ObjectSchema<AuthUser> = Joi.object({
+const newUserSchema: Joi.ObjectSchema<RegisterUser> = Joi.object({
   username: Joi.string().required().min(2).max(20).messages(joiErrorMessages),
   email: Joi.string().email().required().messages(joiErrorMessages),
   password: Joi.string()

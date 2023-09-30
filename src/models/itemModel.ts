@@ -8,7 +8,16 @@ class Item extends Model {
   public title!: string;
   public description!: string | null;
   public price!: number;
-  public category!: string;
+  public category!:
+    | "electronic"
+    | "engine"
+    | "books"
+    | "clothes"
+    | "inmobilary"
+    | "sport"
+    | "House and garden"
+    | "other";
+  public seller_id!: number;
 }
 
 Item.init(
@@ -53,6 +62,7 @@ Item.init(
 Item.hasMany(ItemImages, {
   foreignKey: "item_id",
   sourceKey: "item_id",
+  onDelete: "CASCADE",
 });
 
 Item.hasMany(Favorites, { foreignKey: "item_id", as: "item" });

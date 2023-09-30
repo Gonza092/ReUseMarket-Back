@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response } from "express";
-import getUserById from "../../repository/user/getUserById";
+import getItemById from "../../repository/item/getItemById";
 
-const getUserController = async (
+const getItemByIdController = async (
   req: Request,
   res: Response,
   next: NextFunction
@@ -9,15 +9,15 @@ const getUserController = async (
   try {
     const { id } = req.params;
 
-    const user = await getUserById(id);
+    const item = await getItemById(id);
 
     res.send({
       status: "ok",
-      data: user,
+      data: item,
     });
   } catch (error) {
     next(error);
   }
 };
 
-export default getUserController;
+export default getItemByIdController;

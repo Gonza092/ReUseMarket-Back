@@ -5,7 +5,7 @@ import sharp from "sharp";
 import { generate } from "randomstring";
 
 import { RequestExt } from "../../types/req-ext";
-import updateUserSchema from "../../schemasJoi/users/updateUserSchema";
+import updateUserSchema from "../../schemasJoi/user/updateUserSchema";
 import validateSchema from "../../helpers/validateJoi";
 import createPathIfNotExists from "../../helpers/createPathIfNotExists";
 import getUserById from "../../repository/user/getUserById";
@@ -31,7 +31,7 @@ const updateUserController = async (
 
     let imageFileName: string;
 
-    if (req.files && req.files?.newAvatar) {
+    if (req.files?.newAvatar) {
       await createPathIfNotExists(uploadsDir);
       await createPathIfNotExists(avatarsDir);
 

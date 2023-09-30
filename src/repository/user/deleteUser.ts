@@ -14,8 +14,6 @@ const deleteUser = async (user_id?: number) => {
   await User.destroy({
     where: { user_id: user_id },
   });
-
-  return;
 };
 
 export default deleteUser;

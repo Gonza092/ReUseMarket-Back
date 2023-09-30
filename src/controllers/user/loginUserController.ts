@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from "express";
 import validateSchema from "../../helpers/validateJoi";
-import loginUserSchema from "../../schemasJoi/users/loginUserSchema";
+import loginUserSchema from "../../schemasJoi/user/loginUserSchema";
 import loginUser from "../../repository/user/loginUser";
 
 const loginUserController = async (

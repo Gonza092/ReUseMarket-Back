@@ -13,6 +13,7 @@ app.use(morgan("dev"));
 app.use(express.json());
 app.use(imageUpload());
 
+app.use("/uploads", express.static("./uploads"));
 app.use("/uploads/avatars", express.static("./uploads/avatars"));
 
 app.use(router);

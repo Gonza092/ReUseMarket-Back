@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response } from "express";
 import verifyEmail from "../../repository/user/verifyEmail";
 import validateSchema from "../../helpers/validateJoi";
-import verifyEmailSchema from "../../schemasJoi/users/verifyEmailSchema";
+import verifyEmailSchema from "../../schemasJoi/user/verifyEmailSchema";
 
 const verifyEmailController = async (
   req: Request,

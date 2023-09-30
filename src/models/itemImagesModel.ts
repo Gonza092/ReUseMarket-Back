@@ -3,7 +3,7 @@ import { sequelize } from "../db/db";
 
 class ItemImages extends Model {
   public image_id!: number;
-  public image_url!: string;
+  public image_url!: string[];
 }
 
 ItemImages.init(

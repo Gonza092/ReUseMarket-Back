@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from "express";
 import validateSchema from "../../helpers/validateJoi";
-import updatePassWithCodeSchema from "../../schemasJoi/users/updatePassWithCodeSchema";
+import updatePassWithCodeSchema from "../../schemasJoi/user/updatePassWithCodeSchema";
 import updatePassWithCode from "../../repository/user/UpdatePassWithCode";
 
 const updatePassWithCodeController = async (

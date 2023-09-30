@@ -4,11 +4,11 @@ import { generateError } from "../../helpers/generateError";
 import { encrypt } from "../../helpers/bcryptHandle";
 import { sendMail } from "../../helpers/email";
 
-import { AuthUser } from "../../types/registerUserTypes";
+import { RegisterUser } from "../../types/registerUserTypes";
 
 import User from "../../models/userModel";
 
-const createUser = async ({ email, password, username }: AuthUser) => {
+const createUser = async ({ email, password, username }: RegisterUser) => {
   const userEmail = await User.findOne({
     where: { email: email },
     attributes: ["user_id"],

@@ -1,8 +1,8 @@
 import { NextFunction, Request, Response } from "express";
 import createUser from "../../repository/user/createUser";
-import { AuthUser } from "../../types/registerUserTypes";
+import { RegisterUser } from "../../types/registerUserTypes";
 import validateSchema from "../../helpers/validateJoi";
-import newUserSchema from "../../schemasJoi/users/newUserSchema";
+import newUserSchema from "../../schemasJoi/user/newUserSchema";
 
 const registerUserController = async (
   req: Request,
@@ -10,7 +10,7 @@ const registerUserController = async (
   next: NextFunction
 ) => {
   try {
-    const { username, email, password }: AuthUser = req.body;
+    const { username, email, password }: RegisterUser = req.body;
 
     await validateSchema(newUserSchema, req.body);
 

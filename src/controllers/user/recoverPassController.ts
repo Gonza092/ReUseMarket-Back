@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from "express";
 import validateSchema from "../../helpers/validateJoi";
-import recoverPassSchema from "../../schemasJoi/users/recoverPassSchema";
+import recoverPassSchema from "../../schemasJoi/user/recoverPassSchema";
 import recoverPass from "../../repository/user/recoverPass";
 
 const recoverPassController = async (

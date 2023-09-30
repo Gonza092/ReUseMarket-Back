@@ -1,5 +1,5 @@
 import getUsersController from "./getUsersController";
-import getUserController from "./getUserController";
+import getUserByIdController from "./getUserByIdController";
 import registerUserController from "./registerUserController";
 import verifyEmailController from "./verifyEmailController";
 import loginUserController from "./loginUserController";
@@ -11,7 +11,7 @@ import updatePassWithCodeController from "./updatePassWithCodeController";
 
 export {
   getUsersController,
-  getUserController,
+  getUserByIdController,
   registerUserController,
   verifyEmailController,
   loginUserController,

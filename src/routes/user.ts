@@ -2,7 +2,7 @@ import { Router } from "express";
 
 import {
   getUsersController,
-  getUserController,
+  getUserByIdController,
   registerUserController,
   verifyEmailController,
   loginUserController,
@@ -19,7 +19,7 @@ import authUser from "../middleware/auth";
 const router = Router();
 
 router.get("/", getUsersController);
-router.get("/:id", getUserController);
+router.get("/:id", getUserByIdController);
 router.post("/", registerUserController);
 router.get("/verify/:code", verifyEmailController);
 router.post("/login", verifyAccount, loginUserController);

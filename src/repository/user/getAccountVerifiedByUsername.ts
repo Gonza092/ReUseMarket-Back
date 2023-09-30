@@ -8,10 +8,7 @@ const getAccountVerifiedByUsername = async (username: string) => {
   });
 
   if (!user) {
-    throw generateError(
-      "El nombre de usuario o la contraseña no coinciden.",
-      404
-    );
+    throw generateError("No existe un usuario con ese nombre de usuario.", 404);
   }
 
   return user;
